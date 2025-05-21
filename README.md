@@ -12,7 +12,7 @@
 -Program Studi: Pendidikan Sistem dan Teknologi Informasi
 
 ## Permintaan Program 
-> "[Ingin membuat toko bunga dengan mengimput nama bunga, bunga tersebut menampilkan harga, bisa di review dan juga digambarkan menggunakan ASCII ART ]"
+Saya Ingin membuat toko bunga dengan mengimput nama bunga, bunga tersebut menampilkan harga, bisa di review dan juga digambarkan menggunakan ASCII ART
 
 ## Penjelasan Program 
 - Bahasa pemrograman yang digunakan: C
