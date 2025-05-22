@@ -1,52 +1,118 @@
-# Prerequisites
-*.d
+#include <stdio.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+// Fungsi untuk membersihkan layar terminal 
+void clearScreen() {
+    printf("\033[2J\033[H");
+}
 
-# Linker output
-*.ilk
-*.map
-*.exp
+// Gambar ASCII Mawar
+void printMawar() {
+    printf("      @@@      \n");
+    printf("     @@@@@     \n");
+    printf("    @@@@@@@    \n");
+    printf("    @@@@@@@    \n");
+    printf("     @@@@@     \n");
+    printf("      |||      \n");
+    printf("     // \\\\    \n");
+    printf("   ||     ||   \n");
+    printf("   ||     ||   \n");
+}
 
-# Precompiled Headers
-*.gch
-*.pch
+// Gambar ASCII Melati
+void printMelati() {
+    printf("     ,--./,-.  \n");
+    printf("    /       \\ \n");
+    printf("   |          |\n");
+    printf("    \\        / \n");
+    printf("     `._,._.'  \n");
+    printf("       |||     \n");
+    printf("      | | |    \n");
+    printf("     ~  ~  ~   \n");
+}
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+// Gambar ASCII Anggrek
+void printAnggrek() {
+    printf("     _/\\_      \n");
+    printf("    (    )     \n");
+    printf("   ==\\//==     \n");
+    printf("     |||       \n");
+    printf("     |||       \n");
+    printf("    // \\     \n");
+    printf("   ||   ||     \n");
+}
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+// Gambar ASCII Tulip
+void printTulip() {
+    printf("      .-.       \n");
+    printf("    // **\\     \n");
+    printf("   ||    ||     \n");
+    printf("    \\___/     \n");
+    printf("     |||       \n");
+    printf("     |||       \n");
+    printf("  //// \\\\     \n");
+   
+}
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+// Gambar ASCII Bunga Matahari
+void printMatahari() {
+    printf("     \\ | /     \n");
+    printf("   '-.;;;.-'   \n");
+    printf("  -==;;;;;==-  \n");
+    printf("   .-';;;'-.   \n");
+    printf("     / | \\     \n");
+    printf("      |||      \n");
+    printf("      |||      \n");
+    printf("     // \\\\    \n");
+}
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+int main() {
+    // Deklarasi variabel
+    int pilihan;
+    int i;
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+    // Daftar Nama Bunga
+    char *bunga[] = { "Mawar", "Melati", "Anggrek", "Tulip", "Bunga Matahari" };
+
+    // Harga masing-masing bunga
+    int harga[] = { 50000, 20000, 30000, 25000, 18000 };
+
+    // Review masing-masing bunga
+    char *review[] = {
+        "Mawar bunga yang bewarna merah memiliki aroma khas, dan sering dijadikan simbol cinta atau penghargaan.",
+        "Melati bunga yang bewarna putih, memiliki aroma yang harum dan menenangkan.",
+        "Anggrek melambangkan keindahan dan kemewahan dan cocok menjadi tanaman hias di rumah.",
+        "Tulip Bunga yang bewarna warni cocok untuk hiasan dan juga beraroma sedap.",
+        "Bunga Matahari bewarna kuning melambangkan keceriaan."
+    };
+
+    // Menampilkan daftar bunga yang tersedia dari 1 sampai 5
+    printf("Daftar Bunga yang tersedia:\n");
+    for (i = 0; i < 5; i++) {                   //Looping for dimulai dari 0 dan akan diulang jika input <5, setiap perulangan ditambah 1
+        printf("%d. %s\n", i + 1, bunga[i]);
+    }
+
+    // Input bunga yang dipilih
+    printf("Masukkan nomor bunga yang ingin dipilih (1-5): ");
+    scanf("%d", &pilihan);
+
+    // Output dari Nama bunga, Harga bunga, Review bunga yang di pilih
+    if (pilihan >= 1 && pilihan <= 5) {
+        clearScreen();
+        printf("Bunga yang dipilih: %s\n", bunga[pilihan - 1]);
+        printf("Harga Bunga: Rp %d\n", harga[pilihan - 1]);
+        printf("Review Bunga: %s\n\n", review[pilihan - 1]);
+
+        // Menampilkan gambar bunga yang di pilih
+       printf("Gambar Bunga %s\n", bunga[pilihan - 1]);
+        switch (pilihan) {
+            case 1: printMawar(); break;
+            case 2: printMelati(); break;
+            case 3: printAnggrek(); break;
+            case 4: printTulip(); break;
+            case 5: printMatahari(); break;
+        }
+    } else {
+        printf("Pilihan tidak valid. Coba lagi.\n");
+    }
+
+}
