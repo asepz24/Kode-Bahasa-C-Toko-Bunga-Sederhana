@@ -31,4 +31,5 @@ Saya Ingin membuat toko bunga dengan mengimput nama bunga, bunga tersebut menamp
 -	Array :  Dalam program ini menggunakan array untuk menyimpan data dari bunga[] nama – nama bunga, harga[] harga bunga, dan juga review[] review bunga.
 
 ## Link Video Demo
+https://youtu.be/ZK82-HN7iIM?si=sMmXi6LpcUrW_GgD
 
